@@ -33,7 +33,6 @@ void stroke_output(GLfloat x, GLfloat y, char* format, ...)
 	va_list args;
 	char buffer[200], * p;
 	va_start(args, format);
-	//vsprintf(buffer,format, args);
 	va_end(args);
 	glPushMatrix();
 	glTranslatef(-2.5, y, 0);
@@ -392,7 +391,7 @@ void about()
 	drawstring(-3.5, -3, 0.0, "7. Type of Connection : Point - to - Point & amp;Multipoint.");
 	glFlush();
 	glutSwapBuffers();
-} 
+}
 void s()
 {
 	lan(-4, 1);
@@ -515,10 +514,13 @@ void display()
 	drawstring(-0.5, 1.5, 0, "By");
 	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
 	glColor3f(0.0, 1.0, 1.0);
-	drawstring(-2, 1, 0, "Manya Goswami(USN : 1BG20CS055)");
+	drawstring(-2, 1, 0, "Prakhar Arya(USN : 1BY20CS136)");
 	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
 	glColor3f(0.0, 1.0, 1.0);
-	drawstring(-2, .5, 0, "Navya Dhankar(USN : 1BG20CS060)");
+	drawstring(-2, .5, 0, "Pratham Kalwani(USN : 1BY20CS138)");
+	setFont(GLUT_BITMAP_TIMES_ROMAN_24);
+	glColor3f(0.0, 1.0, 1.0);
+	drawstring(-2, 0, 0, "Ramchandra Paudel(USN : 1BY20CS145)");
 	stroke_output(-2.0, -1, " s-- > Start");
 	stroke_output(-2.0, -1.75, " A-- & gt; About");
 	stroke_output(-2.0, -3, "q-- & gt; Quit");
@@ -550,8 +552,8 @@ void menu(int id)
 		break;
 	case 4:glutIdleFunc(P);
 		break;
-	case 5:glutIdleFunc(n);
-		break;
+	//case 5:glutIdleFunc(n);
+		//break;
 	case 6:
 		pca2pcb = true;
 		x8 = -4;
@@ -604,7 +606,7 @@ void mykey(unsigned char key, int x, int y)
 		exit(0);
 	}
 }
-void main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -621,7 +623,7 @@ void main(int argc, char* argv[])
 	glutCreateMenu(menu);
 	glutAddMenuEntry("About Project", 1);
 	glutAddMenuEntry("Local Area Network(LAN)'s'", 2);
-	glutAddMenuEntry("Local Area Network(LAN) 'n'", 3);
+//	glutAddMenuEntry("Local Area Network(LAN) 'n'", 3);
 	glutAddMenuEntry("Wide Area Network(WAN) 'P'", 5);
 	glutAddMenuEntry("Transfer data from PC - A to PC - B '1'", 6);
 	glutAddMenuEntry("Transfer data from PC - A to Company B-->'2'", 7);
